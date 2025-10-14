@@ -13,6 +13,6 @@ class Rona < Formula
   end
 
   test do
-    assert_match "rona 2.10.3")
+    assert_match "rona 2.10.3", shell_output("#{bin}/rona --version")
   end
 end

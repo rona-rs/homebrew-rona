@@ -40,7 +40,7 @@ jobs:
           # Update the version line
           sed -i.bak "s|^  version \".*\"|  version \"${VERSION}\"|" "$FORMULA"
           # Update the test assertion line (assumes format: assert_match "rona X", ...)
-          sed -i.bak "s|assert_match \"rona .*\"|assert_match \"rona ${VERSION}\"|" "$FORMULA"
+          sed -i.bak "s|assert_match \"rona [^\"]*\"|assert_match \"rona ${VERSION}\"|" "$FORMULA"
           rm -f "${FORMULA}.bak"
 
       - name: Create pull request
