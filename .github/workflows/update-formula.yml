@@ -46,7 +46,7 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
           commit-message: "rona: bump to ${{ github.event.client_payload.tag }}"
           branch: bump/rona-${{ github.event.client_payload.tag }}
           title: "rona: bump to ${{ github.event.client_payload.tag }}"
@@ -55,4 +55,3 @@ jobs:
             - Update `url` to the new tag tarball
             - Update `sha256` to the tarball checksum
             - Update `version` and test assertion
-
