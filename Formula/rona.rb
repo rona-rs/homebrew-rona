@@ -1,10 +1,10 @@
 class Rona < Formula
   desc "A powerful CLI tool to streamline your Git workflow"
   homepage "https://github.com/rona-rs/rona"
-  url "https://github.com/rona-rs/rona/archive/refs/tags/v2.16.0.tar.gz"
-  sha256 "9063f6fe178a04ac35954d13cccf8563abc5f4db584d854393e41cad8d76ebfb"
+  url "https://github.com/rona-rs/rona/archive/refs/tags/v2.17.0.tar.gz"
+  sha256 "1a04a04190dba9d6d5babb70db7d63b01ca0553fc289d2572f8afc7cc32524b4"
   license "Apache-2.0 OR MIT"
-  version "2.16.0"
+  version "2.17.0"
 
   depends_on "rust" => :build
 
@@ -13,6 +13,6 @@ class Rona < Formula
   end
 
   test do
-    assert_match "rona 2.16.0", shell_output("#{bin}/rona --version")
+    assert_match "rona 2.17.0", shell_output("#{bin}/rona --version")
   end
 end
