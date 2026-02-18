@@ -8,9 +8,9 @@ class Rona < Formula
 
   bottle do
     root_url "https://github.com/rona-rs/rona/releases/download/v2.17.6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c2d1d1f9cd59ce15c7fb5aba3cbcfd62f86a09b5c0219258b178bb4d4fb1412"
-    sha256 cellar: :any_skip_relocation, sequoia:       "9b33f4caca18e3137edf141b80c84ea593bec407848669bb952bf9264260edf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4563cf49d4793c241750ec4657b8cdcc5a3c3c8fa2465ed8bdcd2456e8833e4c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ee39ea0f328f90c428c2c5d2e4e93e9f5717565f9be319f48aab874302744b0"
+    sha256 cellar: :any_skip_relocation, sequoia:       "6adaf61ed49f2c9bbcb201854ccd42b103b7991130456678b9594aaf4379cb13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ce214130de1ae64eae27bcb12f25e580917d4c4a827b6fe41b6c8056ef106b9"
   end
 
   depends_on "rust" => :build
