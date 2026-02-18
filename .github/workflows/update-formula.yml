@@ -44,8 +44,6 @@ jobs:
           sed -i.bak "s|^  version \".*\"|  version \"${VERSION}\"|" "$FORMULA"
           # Update the test assertion line (assumes format: assert_match "rona X", ...)
           sed -i.bak "s|assert_match \"rona [^\"]*\"|assert_match \"rona ${VERSION}\"|" "$FORMULA"
-          # Update bottle root_url
-          sed -i.bak "s|root_url \"https://.*\"|root_url \"https://github.com/rona-rs/rona/releases/download/${TAG}\"|" "$FORMULA"
           # Update bottle SHA256s
           sed -i.bak "/arm64_sequoia:/s/\"[^\"]*\"/\"${SHA_ARM64}\"/" "$FORMULA"
           sed -i.bak "/, sequoia:/s/\"[^\"]*\"/\"${SHA_SEQUOIA}\"/" "$FORMULA"
