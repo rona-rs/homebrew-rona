@@ -36,6 +36,17 @@ jobs:
           SHA_LINUX='${{ github.event.client_payload.sha256_x86_64_linux }}'
           FORMULA='Formula/rona.rb'
 
+          # Every checksum must be present: an empty value produces a formula
+          # that Homebrew rejects with "Error: Invalid sha256 hash:".
+          for pair in "source:${SHA}" "arm64_sequoia:${SHA_ARM64}" "sequoia:${SHA_SEQUOIA}" "x86_64_linux:${SHA_LINUX}"; do
+            name="${pair%%:*}"
+            value="${pair#*:}"
+            if ! printf '%s' "$value" | grep -qE '^[0-9a-f]{64}$'; then
+              echo "ERROR: missing or malformed sha256 for ${name}: '${value}'"
+              exit 1
+            fi
+          done
+
           # Update the url line
           sed -i.bak "s|^  url \".*\"|  url \"https://github.com/rona-rs/rona/archive/refs/tags/${TAG}.tar.gz\"|" "$FORMULA"
           # Update the source sha256 line (top-level, not inside bottle block)
