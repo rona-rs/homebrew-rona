@@ -7,7 +7,7 @@ class Rona < Formula
   version "2.29.0"
 
   bottle do
-    root_url "https://tomplanche.com/api/brew/track/rona"
+    root_url "https://github.com/rona-rs/rona/releases/download/v2.29.0"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2632a6fda060f264450415a895ac716e394b5bb65ad06387b64c6d02313340c"
     sha256 cellar: :any_skip_relocation, sequoia:       "d8ba743cd25be6fd2850a74ca7b9d7ae325cc33aead9a9f24d61da27ec0804de"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff68208fdb87de28c50b25f89d7920f16073bde191f89b20f0325d55b1dd0a4b"
