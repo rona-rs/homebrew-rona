@@ -53,6 +53,9 @@ jobs:
           sed -i.bak "s|^  sha256 \".*\"|  sha256 \"${SHA}\"|" "$FORMULA"
           # Update the version line
           sed -i.bak "s|^  version \".*\"|  version \"${VERSION}\"|" "$FORMULA"
+          # Update the bottle root_url: Homebrew downloads each bottle from the
+          # release assets of the tag (<root_url>/rona-<version>.<tag>.bottle.tar.gz)
+          sed -i.bak "s|^    root_url \".*\"|    root_url \"https://github.com/rona-rs/rona/releases/download/${TAG}\"|" "$FORMULA"
           # Update the test assertion line (assumes format: assert_match "rona X", ...)
           sed -i.bak "s|assert_match \"rona [^\"]*\"|assert_match \"rona ${VERSION}\"|" "$FORMULA"
           # Update bottle SHA256s
@@ -73,3 +76,4 @@ jobs:
             - Update `url` to the new tag tarball
             - Update `sha256` to the tarball checksum
             - Update `version` and test assertion
+            - Update the bottle `root_url` and the bottle checksums
