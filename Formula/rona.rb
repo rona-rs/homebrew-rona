@@ -1,16 +1,16 @@
 class Rona < Formula
   desc "A powerful CLI tool to streamline your Git workflow"
   homepage "https://github.com/rona-rs/rona"
-  url "https://github.com/rona-rs/rona/archive/refs/tags/v2.29.0.tar.gz"
-  sha256 "935babf8547a41a85d0b2c02448256fa89885acd526103a24a973fce071efc74"
+  url "https://github.com/rona-rs/rona/archive/refs/tags/v2.35.1.tar.gz"
+  sha256 "7a21f927bfd762a5c79e6c7ae49fb92f86f170f53a2c772fd5a0e3fb6145ada5"
   license "Apache-2.0 OR MIT"
-  version "2.29.0"
+  version "2.35.1"
 
   bottle do
-    root_url "https://github.com/rona-rs/rona/releases/download/v2.29.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2632a6fda060f264450415a895ac716e394b5bb65ad06387b64c6d02313340c"
-    sha256 cellar: :any_skip_relocation, sequoia:       "d8ba743cd25be6fd2850a74ca7b9d7ae325cc33aead9a9f24d61da27ec0804de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff68208fdb87de28c50b25f89d7920f16073bde191f89b20f0325d55b1dd0a4b"
+    root_url "https://github.com/rona-rs/rona/releases/download/v2.35.1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04e4f0e2610129bae648872b278e8a63329bbc9e1a12b25fa4146d809d3052b0"
+    sha256 cellar: :any_skip_relocation, sequoia:       "4d3add4cae805c1dd542e2c718dac631b89e7ea879491dca2aeade5dda548a3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75255d1e2607f2733a8a9b55e7ec848c3ec26bb8fcb669f960d0b7e1cd3b3f05"
   end
 
   depends_on "rust" => :build
@@ -20,6 +20,6 @@ class Rona < Formula
   end
 
   test do
-    assert_match "rona 2.29.0", shell_output("#{bin}/rona --version")
+    assert_match "rona 2.35.1", shell_output("#{bin}/rona --version")
   end
 end
